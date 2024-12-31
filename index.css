@@ -1,0 +1,161 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: #2d1e2f;
+    color: #bba1b2;
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(45deg, #4c1f39, #5e223e, #732649, #8b3057);
+    background-size: 300% 300%;
+    animation: gradientShift 8s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Particle Effect */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: moveParticles 10s linear infinite;
+}
+
+@keyframes moveParticles {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(calc(-50vw + 100%));
+        opacity: 0;
+    }
+}
+
+/* Form Container */
+.form-container {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    z-index: 1; /* Ensure form is above background animation */
+    position: relative;
+}
+
+/* Heading and Description */
+h1 {
+    font-size: 26px;
+    color: #732649;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 15px;
+    color: #5e223e;
+    margin-bottom: 20px;
+}
+
+/* Labels and Inputs */
+form label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #732649;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #732649;
+    box-shadow: 0 0 8px rgba(115, 38, 73, 0.5);
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    font-size: 14px;
+    cursor: pointer;
+    color: #5e223e;
+}
+
+/* Button Styling */
+button {
+    background-color: #732649;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #5e223e;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .form-container {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
